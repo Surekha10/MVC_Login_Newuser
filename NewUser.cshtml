@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>NewUser</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div align="center">
+        @using (Html.BeginForm("NewUser", "Home", FormMethod.Post, new { @class = "container", @style = "text-align:left;width:30%;" }))
+        {
+            <div class="form-group">
+                <label for="EmailID" class="form-control-static">EmailID</label>
+                <input type="text" name="EmailID" id="EmailID" class="form-control" />
+                <label for="EmailID" id="lbl_EmailID_error" class="text-danger">*</label>
+            </div>
+            <div class="form-group">
+                <label for="Password" class="form-control-static">Password</label>
+                <input type="text" name="Password" id="Password" class="form-control" />
+                <label for="Password" id="lbl_Password_error" class="text-danger">*</label>
+            </div>
+            <div class="form-group">
+                <label for="Name" class="form-control-static">Name</label>
+                <input type="text" name="Name" id="Name" class="form-control" />
+                <label for="Name" id="lbl_Name_error" class="text-danger">*</label>
+            </div>
+            <div class="form-group">
+                <label for="City" class="form-control-static">City</label>
+                    <select name="City" id="City" class="form-control">
+                        <option value="">Select</option>
+                        <option value="BGL">BGL</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Mumbai">Mumbai</option>
+                    </select>
+                <lable for="City" class="text-danger" id="lbl_City_error">*</lable>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="New User" class="btn-danger" />
+                @Html.ActionLink("Login", "Login", "Home")
+            </div>
+                }
+            </div>
+</body>
+</html>
